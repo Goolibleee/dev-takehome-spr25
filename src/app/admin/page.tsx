@@ -67,11 +67,8 @@ export default function ItemRequestsPage() {
         const text = await safeText(res);
         throw new Error(`PATCH failed: ${res.status} ${text}`);
       }
-      // optional: sync with backend response if it returns the updated row/list
-      // const updated = await res.json();
-      // await load(); // if you prefer to re-fetch
+   
     } catch (e: any) {
-      // revert on error
       setData(prev);
       setErr(e?.message ?? "Failed to update status");
     }
